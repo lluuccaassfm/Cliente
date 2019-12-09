@@ -8,6 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
+@Table(name = "Perfil")
 public class Perfil implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -15,7 +16,7 @@ public class Perfil implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    private long id;
+    private Long id;
 
     @NotNull
     private String descricao;

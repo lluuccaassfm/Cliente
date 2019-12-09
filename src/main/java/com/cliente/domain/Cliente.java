@@ -6,9 +6,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
+@Table(name = "Cliente")
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,7 +19,7 @@ public class Cliente implements Serializable {
     @Column(name = "ID_CLIENTE")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    private long id;
+    private Long id;
 
     @NotBlank
     @NotNull
@@ -31,13 +33,14 @@ public class Cliente implements Serializable {
 
     @NotBlank
     @NotNull
+    @Column(name = "SENHA_CLIENTE")
+    private String senha;
+
     @ManyToOne(optional = false)
-    @JoinColumn(name = "ID_PERFIL")
+    @JoinColumn(name = "ID_PERFIL", nullable = false)
     private Perfil perfil;
 
-    @NotBlank
-    @NotNull
     @ManyToOne(optional = false)
-    @JoinColumn(name = "ID_ENDERECO")
+    @JoinColumn(name = "ID_ENDERECO", nullable = false)
     private Endereco endereco;
 }

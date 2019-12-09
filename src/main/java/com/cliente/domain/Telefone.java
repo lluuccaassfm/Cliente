@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
+@Table(name = "Telefone")
 public class Telefone implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -16,7 +17,7 @@ public class Telefone implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    private long id;
+    private Long id;
 
     @NotNull
     @NotBlank

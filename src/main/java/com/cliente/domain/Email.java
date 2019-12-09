@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
+@Table(name = "Email")
 public class Email implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -16,14 +17,13 @@ public class Email implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    private long id;
+    private Long id;
 
     @NotNull
     @NotBlank
     private  String descricao;
 
     @ManyToOne(optional = false)
-    @NotNull
-    @JoinColumn(name = "ID_CLIENTE")
+    @JoinColumn(name = "ID_CLIENTE", nullable = false)
     private Cliente cliente;
 }
