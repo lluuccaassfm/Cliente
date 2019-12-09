@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "cliente")
+@RequestMapping(value = "/cliente")
 public class ClienteResource {
 
     private final Logger log = LoggerFactory.getLogger(ClienteResource.class);
