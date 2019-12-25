@@ -15,29 +15,31 @@ public class Endereco implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID_ENDERECO")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @NotBlank
     @NotNull
+    @Column(name = "CEP")
     private String cep;
 
-    @NotBlank
     @NotNull
+    @Column(name = "LOGRADOURO")
     private String logradouro;
 
-    @NotBlank
     @NotNull
+    @Column(name = "BAIRRO")
     private String bairro;
 
-    @NotBlank
     @NotNull
+    @Column(name = "CIDADE")
     private String cidade;
 
-    @NotBlank
     @NotNull
+    @Column(name = "UF")
     private String uf;
 
+    @Column(name = "COMPLEMENTO")
     private String complemento;
 }

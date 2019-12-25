@@ -21,19 +21,16 @@ public class Cliente implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @NotBlank
     @NotNull
     @Column(name = "NOME_CLIENTE")
     private String nome;
 
-    @NotBlank
     @NotNull
-    @Column(name = "CPF_CLIENTE")
+    @Column(name = "CPF")
     private String cpf;
 
-    @NotBlank
     @NotNull
-    @Column(name = "SENHA_CLIENTE")
+    @Column(name = "SENHA")
     private String senha;
 
     @ManyToOne(optional = false)

@@ -15,12 +15,13 @@ public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID_EMAIL")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
     @NotNull
-    @NotBlank
+    @Column(name = "DS_EMAIL")
     private  String descricao;
 
     @ManyToOne(optional = false)

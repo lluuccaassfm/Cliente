@@ -31,7 +31,7 @@ public class ClienteResource {
     }
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Cliente> GetById(@PathVariable(value = "id") Long id) {
+    public ResponseEntity<Cliente> getById(@PathVariable(value = "id") Long id) {
         log.info("Get one cliente");
         Optional <Cliente> cliente = clienteService.getOneCliente(id);
         if(cliente.isPresent())
@@ -41,20 +41,20 @@ public class ClienteResource {
     }
 
     @PostMapping()
-    public Cliente Post(@Valid @RequestBody Cliente cliente) {
+    public Cliente post(@Valid @RequestBody Cliente cliente) {
         log.info("Create a cliente");
 
         return clienteService.createCliente(cliente);
     }
 
-    @DeleteMapping()
-    public String deleteCliente(@RequestBody Cliente cliente){
-        log.info("Delete a cliente ");
-        return clienteService.deleteCliente(cliente);
-    }
+//    @DeleteMapping()
+//    public String deleteCliente(@RequestBody Cliente cliente){
+//        log.info("Delete a cliente ");
+//        return clienteService.deleteCliente(cliente);
+//    }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Object> Delete(@PathVariable(value = "id") long id) {
+    public ResponseEntity<Object> delete(@PathVariable(value = "id") long id) {
 
         log.info("Delete a cliente ");
 
